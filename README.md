@@ -1,5 +1,5 @@
 # singularity-docker-fedora30-brave
-fedora30 container to run brave
+fedora30 container to run brave (at library://tru/default/f30-brave)
 
 
 Running without installation:
