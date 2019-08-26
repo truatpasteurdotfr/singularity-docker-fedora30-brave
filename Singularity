@@ -30,9 +30,10 @@ reposync --download-path $D \
 --repo brave-browser-rpm-release.s3.brave.com_x86_64_ \
 --newest-only \
 && \
-rpm2cpio brave-browser-rpm-release.s3.brave.com_x86_64_/brave-browser*.rpm | (cd / && cpio -iudv) 2>&1 >> /dev/null
+rpm2cpio brave-browser-rpm-release.s3.brave.com_x86_64_/brave-browser*.rpm | (cd / && cpio -iumdV 2>>/dev/null) \
+; \
+cd / && rm -rf /opt/brave.com/can_i_write $D && \
 echo done
-cd / && rm -rf /opt/brave.com/can_i_write $D
 
 # otherwise just use the provided version
 # ignoring the other files in /usr/ and /etc
