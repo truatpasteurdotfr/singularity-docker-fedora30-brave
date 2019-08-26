@@ -24,3 +24,4 @@ Upgrading on the fly by allowing the container to write to /your/choice/of/path 
 mkdir /your/choice/of/path
 singularity run  -B /run -B /your/choice/of/path:/opt/brave.com library://tru/default/f30-brave
 ```
+if you don't use that feature, it will just run the embedded version
