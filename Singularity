@@ -17,5 +17,6 @@ rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
 dnf -y install brave-browser
 
 %runscript
+dnf -y upgrade brave-browser
 # --no-sandbox is a security risk
 brave-browser --no-sandbox "$@"
