@@ -24,4 +24,13 @@ Upgrading on the fly by allowing the container to write to /your/choice/of/path 
 mkdir /your/choice/of/path
 singularity run  -B /run -B /your/choice/of/path:/opt/brave.com library://tru/default/f30-brave
 ```
-if you don't use that feature, it will just run the embedded version
+if you don't use that feature, it will just run the embedded version.
+
+Speciying your timezone in case Brave does not detect it properly:
+```
+env TZ=$(cat /etc/timezone) singularity run -B /run library://tru/default/f30-brave 
+```
+or explictly:
+```
+env TZ="Europe/Amsterdam" singularity run -B /run library://tru/default/f30-brave
+```
